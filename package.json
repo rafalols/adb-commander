@@ -1,0 +1,72 @@
+{
+  "name": "adb-commander",
+  "version": "0.1.0",
+  "description": "A dual-pane file manager for macOS and Android powered by ADB",
+  "private": true,
+  "license": "MIT",
+  "author": "ADB Commander contributors",
+  "keywords": [
+    "adb",
+    "android",
+    "macos",
+    "file-transfer",
+    "file-manager",
+    "electron"
+  ],
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "dist": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac",
+    "dist:dir": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --dir --mac"
+  },
+  "dependencies": {
+    "lucide-react": "1.27.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "electron": "43.2.0",
+    "electron-builder": "26.15.3",
+    "typescript": "5.9.3",
+    "vite": "8.1.5",
+    "vite-plugin-electron": "1.1.0"
+  },
+  "build": {
+    "appId": "app.adbcommander.desktop",
+    "productName": "ADB Commander",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "hardenedRuntime": true
+    },
+    "dmg": {
+      "title": "ADB Commander ${version}",
+      "artifactName": "ADB-Commander-${version}-${arch}.${ext}"
+    },
+    "artifactName": "ADB-Commander-${version}-${os}-${arch}.${ext}"
+  }
+}
