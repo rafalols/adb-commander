@@ -1,14 +1,19 @@
 # ADB Commander
 
-A fast, dual-pane file manager for transferring files between macOS and Android
-over ADB.
+A keyboard-first, dual-pane file manager for transferring files between macOS
+and Android over ADB. Built quickly, vibe-coded with GPT-5.6-Sol and shared
+because it turned out to be genuinely useful.
 
 ![ADB Commander dual-pane interface](docs/screenshots/adb-commander-main.jpg)
 
 > [!NOTE]
-> ADB Commander is an early preview. The core file browser, transfers and
-> incremental update workflow work, but the project has not yet shipped a
-> signed and notarized macOS release.
+> ADB Commander is a small, fully vibe-coded side project built with GPT-5.6-Sol
+> for my own file-transfer needs. It works well enough for me, so I decided to
+> share it. Expect rough edges, experimental ideas and occasional questionable
+> decisions. Contributions and improvements are very welcome.
+>
+> There is no signed or notarized macOS release yet, so for now the app is best
+> built directly from source.
 
 ## Highlights
 
